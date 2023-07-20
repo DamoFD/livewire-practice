@@ -2,24 +2,25 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Comment;
 use Carbon\Carbon;
 use Livewire\Component;
 
 class Comments extends Component
 {
 
-    public $comments = [
-        [
-            'body' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi eligendi, illum nemo placeat sequi! Adipisci labore molestiae odit. Excepturi?',
-            'created_at' => '3 min ago',
-            'creator' => 'Sarthak',
-        ],
-    ];
+    public $comments;
 
     public $newComment;
 
+    public function mount()
+    {
+        $this->comments = Comment::all();
+    }
+
     public function addComment()
     {
+        if (!$this->newComment){return;}
         array_unshift($this->comments, [
             'body' => $this->newComment,
             'created_at' => Carbon::now()->diffForHumans(),
