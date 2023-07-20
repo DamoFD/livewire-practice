@@ -38,6 +38,7 @@ class Comments extends Component
 
         $this->newComment = '';
 
+        session()->flash('message', 'Comment added successfully');
     }
 
     public function remove($commentId)
@@ -45,6 +46,8 @@ class Comments extends Component
         $comment = Comment::find($commentId);
         $comment->delete();
         $this->comments = $this->comments->except($commentId);
+
+        session()->flash('message', 'Comment deleted successfully');
     }
 
     public function render()
