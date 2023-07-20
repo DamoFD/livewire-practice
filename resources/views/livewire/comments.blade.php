@@ -2,7 +2,7 @@
     <h1 class="text-3xl font-extrabold">Comments</h1>
     <div class="mt-20 w-full">
         <div class="flex w-full">
-            <input wire:model.debounce.500ms="newComment" class="w-5/6 mr-4 border-2 border-gray-200 rounded-lg text-lg" type="text" />
+            <input wire:model.lazy="newComment" class="w-5/6 mr-4 border-2 border-gray-200 rounded-lg text-lg" type="text" />
             <button wire:click="addComment" class="py-2 px-6 bg-blue-600 rounded-lg text-white" type="submit">Add</button>
         </div>
         @foreach ($comments as $comment)
