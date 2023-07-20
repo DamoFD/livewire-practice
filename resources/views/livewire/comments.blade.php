@@ -1,11 +1,11 @@
-<section class="w-2/3 mt-20">
+<section class="w-5/12 mt-10 border-2 border-gray-200 p-2 rounded-lg">
     <h1 class="text-3xl font-extrabold">Comments</h1>
     @if (session()->has('message'))
         <p class="bg-green-100 border-l-4 border-green-500 text-green-600">
             {{ session('message') }}
         </p>
     @endif
-    <div class="mt-20 w-full">
+    <div class="mt-4 w-full">
 
         @if ($image)
             <img src="{{$image}}" class="max-w-full max-h-44 object-cover" alt="uploaded image" />
@@ -22,7 +22,7 @@
         @enderror
 
         @foreach ($comments as $comment)
-        <div class="mt-10 border-2 border-gray-200 rounded-lg">
+        <div class="mt-4 border-2 border-gray-200 rounded-lg">
             <div class="flex m-2 items-center justify-between">
                 <div class="flex">
                     <h2 class="text-lg font-extrabold">{{$comment->creator->name}}</h2>

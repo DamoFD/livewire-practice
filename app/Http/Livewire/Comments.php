@@ -16,6 +16,7 @@ class Comments extends Component
 
     public $newComment;
     public $image;
+    public $ticketId = 1;
 
     protected $listeners = ['fileUpload' => 'handleFileUpload'];
 
@@ -40,6 +41,7 @@ class Comments extends Component
             'body' => $this->newComment,
             'user_id' => 1,
             'image' => $image,
+            'support_ticket_id' => $this->ticketId,
         ]);
 
         $this->newComment = '';
