@@ -25,6 +25,6 @@
             <p class="mx-2 pb-2">{{$comment->body}}</p>
         </div>
         @endforeach
-        {{$comments->links()}}
+        {{$comments->links('pagination-links')}}
     </div>
 </section>
