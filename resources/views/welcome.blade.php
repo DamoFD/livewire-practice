@@ -14,9 +14,10 @@
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
+        @livewireScripts
     </head>
     <body class="w-full flex justify-center">
-        @livewireScripts
+        @livewire('tickets')
         @livewire('comments')
     </body>
 </html>
