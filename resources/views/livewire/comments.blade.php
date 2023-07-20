@@ -31,6 +31,9 @@
                 <i wire:click="remove({{$comment->id}})" class="fas fa-times text-red-200 hover:text-red-600 cursor-pointer"></i>
             </div>
             <p class="mx-2 pb-2">{{$comment->body}}</p>
+            @if ($comment->image)
+                <img src="{{$comment->imagePath}}" alt="{{$comment->creator->name}}'s image" class="max-w-full max-h-80 object-cover ml-2 mb-2 rounded-lg" />
+            @endif
         </div>
         @endforeach
         {{$comments->links('pagination-links')}}
