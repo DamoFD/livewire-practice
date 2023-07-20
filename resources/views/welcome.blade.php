@@ -15,7 +15,7 @@
         @livewireStyles
     </head>
     <body class="w-full flex justify-center">
-        @livewire('comments')
+        @livewire('comments', ['initialComments' => $comments])
         @livewireScripts
     </body>
 </html>
