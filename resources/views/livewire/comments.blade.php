@@ -24,6 +24,7 @@
             </div>
             <p class="mx-2 pb-2">{{$comment->body}}</p>
         </div>
-            @endforeach
+        @endforeach
+        {{$comments->links()}}
     </div>
 </section>
