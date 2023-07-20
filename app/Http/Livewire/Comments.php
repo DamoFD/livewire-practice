@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Comment;
 use Carbon\Carbon;
 use Livewire\Component;
 
@@ -12,9 +13,9 @@ class Comments extends Component
 
     public $newComment;
 
-    public function mount($initialComments)
+    public function mount()
     {
-        $this->comments = $initialComments;
+        $this->comments = Comment::all();
     }
 
     public function addComment()

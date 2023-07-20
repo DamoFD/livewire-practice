@@ -9,7 +9,7 @@
         <div class="mt-10 border-2 border-gray-200 rounded-lg">
             <div class="flex m-2 items-center">
                 <h2 class="text-lg font-extrabold">{{$comment->creator->name}}</h2>
-                <p class="ml-4 text-gray-400">{{$comment->created_at}}</p>
+                <p class="ml-4 text-gray-400">{{$comment->created_at->diffForHumans()}}</p>
             </div>
             <p class="mx-2 pb-2">{{$comment->body}}</p>
         </div>
