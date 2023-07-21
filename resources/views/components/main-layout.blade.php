@@ -19,8 +19,12 @@
 <body>
 <header class="flex justify-end w-full bg-pink-600 h-10 items-center">
     <a class="mr-10" href="{{route('home')}}">Home</a>
+    @if (!Auth::user())
     <a class="mr-10" href="{{route('login')}}">Login</a>
     <a class="mr-10" href="{{route('register')}}">Register</a>
+    @else
+    @livewire('logout')
+    @endif
 </header>
 {{$slot}}
 </body>
